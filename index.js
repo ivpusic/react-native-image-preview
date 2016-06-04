@@ -20,6 +20,7 @@ export default class ImageZoom extends Component {
     return <Modal
         animationType={'fade'}
         transparent={true}
+	onRequestClose={close}
         visible={visible}>
       <View style={styles.overlay}>
         <TouchableWithoutFeedback onPress={close}>
