@@ -7,7 +7,7 @@ Display zoomed image in transparent modal window
 ## Installation
 
 ```
-npm i react-native-image-preview
+npm i --save react-native-image-preview
 ```
 
 ## Usage
