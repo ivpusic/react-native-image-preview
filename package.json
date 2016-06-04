@@ -1,0 +1,30 @@
+{
+  "name": "react-native-image-preview",
+  "version": "0.1.0",
+  "description": "Display zoomed image in transparent modal window ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivpusic/react-native-image-preview.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "react-native",
+    "image",
+    "zoom",
+    "preview"
+  ],
+  "author": "Ivan Pusic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivpusic/react-native-image-preview/issues"
+  },
+  "homepage": "https://github.com/ivpusic/react-native-image-preview#readme",
+  "peerDependencies": {
+    "react-native": ">=0.26.0"
+  }
+}
