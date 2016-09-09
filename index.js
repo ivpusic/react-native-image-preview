@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class ImageZoom extends Component {
+export default class ImagePreview extends Component {
   render() {
     let {source, visible, close, imageStyle} = this.props;
 
@@ -31,7 +31,7 @@ export default class ImageZoom extends Component {
   }
 }
 
-ImageZoom.propTypes = {
+ImagePreview.propTypes = {
   visible: React.PropTypes.bool,
   close: React.PropTypes.func,
   source: React.PropTypes.object,
