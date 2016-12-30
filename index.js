@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import {Modal, View, TouchableWithoutFeedback, Image, StyleSheet} from 'react-native';
+import {Modal, View, TouchableWithoutFeedback, StyleSheet} from 'react-native';
+
+import Image from 'react-native-image-progress';
+import ProgressBar from 'react-native-progress/Bar';
 
 const styles = StyleSheet.create({
   overlay: {
@@ -17,17 +20,17 @@ export default class ImageZoom extends Component {
   render() {
     let {source, visible, close, imageStyle} = this.props;
 
-    return <Modal
+    return (<Modal
         animationType={'fade'}
         transparent={true}
 	onRequestClose={close}
         visible={visible}>
       <View style={styles.overlay}>
         <TouchableWithoutFeedback onPress={close}>
-          <Image resizeMode={'contain'} source={source} style={[styles.image, imageStyle]} />
+          <Image indicator={ProgressBar} indicatorProps={this.props.indicatorProps} resizeMode={'contain'} source={source} style={[styles.image, imageStyle]} />
         </TouchableWithoutFeedback>
       </View>
-    </Modal>;
+    </Modal>);
   }
 }
 
@@ -35,6 +38,10 @@ ImageZoom.propTypes = {
   visible: React.PropTypes.bool,
   close: React.PropTypes.func,
   source: React.PropTypes.object,
+  indicatorProps: React.PropTypes.oneOfType([
+    React.PropTypes.number,
+    React.PropTypes.object
+  ]),
   imageStyle: React.PropTypes.oneOfType([
     React.PropTypes.number,
     React.PropTypes.object
@@ -44,4 +51,3 @@ ImageZoom.propTypes = {
     React.PropTypes.array
   ])
 };
-
