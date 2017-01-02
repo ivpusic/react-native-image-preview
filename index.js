@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
 export default class ImagePreview extends Component {
   render() {
-    let {source, visible, close, imageStyle} = this.props;
+    let {source, visible, close, imageStyle, indicator} = this.props;
 
     return (<Modal
         animationType={'fade'}
@@ -27,7 +27,7 @@ export default class ImagePreview extends Component {
         visible={visible}>
       <View style={styles.overlay}>
         <TouchableWithoutFeedback onPress={close}>
-          <Image indicator={ProgressBar} indicatorProps={this.props.indicatorProps} resizeMode={'contain'} source={source} style={[styles.image, imageStyle]} />
+          <Image indicator={indicator || ProgressBar} indicatorProps={this.props.indicatorProps} resizeMode={'contain'} source={source} style={[styles.image, imageStyle]} />
         </TouchableWithoutFeedback>
       </View>
     </Modal>);
@@ -35,6 +35,7 @@ export default class ImagePreview extends Component {
 }
 
 ImagePreview.propTypes = {
+  indicator: React.PropTypes.func,
   visible: React.PropTypes.bool,
   close: React.PropTypes.func,
   source: React.PropTypes.object,
