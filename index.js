@@ -18,14 +18,14 @@ const styles = StyleSheet.create({
 
 export default class ImagePreview extends Component {
   render() {
-    let {source, visible, close, imageStyle, indicator} = this.props;
+    let {source, visible, close, imageStyle, indicator, overlayStyle} = this.props;
 
     return (<Modal
         animationType={'fade'}
         transparent={true}
 	onRequestClose={close}
         visible={visible}>
-      <View style={styles.overlay}>
+      <View style={[styles.overlay, overlayStyle]}>
         <TouchableWithoutFeedback onPress={close}>
           <Image indicator={indicator || ProgressBar} indicatorProps={this.props.indicatorProps} resizeMode={'contain'} source={source} style={[styles.image, imageStyle]} />
         </TouchableWithoutFeedback>
@@ -44,6 +44,10 @@ ImagePreview.propTypes = {
     React.PropTypes.object
   ]),
   imageStyle: React.PropTypes.oneOfType([
+    React.PropTypes.number,
+    React.PropTypes.object
+  ]),
+  overlayStyle: React.PropTypes.oneOfType([
     React.PropTypes.number,
     React.PropTypes.object
   ]),
