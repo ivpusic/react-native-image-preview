@@ -38,7 +38,10 @@ ImagePreview.propTypes = {
   indicator: React.PropTypes.func,
   visible: React.PropTypes.bool,
   close: React.PropTypes.func,
-  source: React.PropTypes.object,
+  source: React.PropTypes.oneOfType([
+    React.PropTypes.number,
+    React.PropTypes.object
+  ]),
   indicatorProps: React.PropTypes.oneOfType([
     React.PropTypes.number,
     React.PropTypes.object
