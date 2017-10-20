@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-preview",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Display zoomed image in transparent modal window ",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "react-native": ">=0.26.0"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react-native-image-progress": "^0.6.0",
     "react-native-progress": "^3.2.0"
   }

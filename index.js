@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
-import {Modal, View, TouchableWithoutFeedback, StyleSheet} from 'react-native';
+import React, { Component } from 'react';
+import { Modal, View, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 
+import PropTypes from 'prop-types';
 import Image from 'react-native-image-progress';
 import ProgressBar from 'react-native-progress/Bar';
 
@@ -18,13 +19,13 @@ const styles = StyleSheet.create({
 
 export default class ImagePreview extends Component {
   render() {
-    let {source, visible, close, imageStyle, indicator, overlayStyle} = this.props;
+    let { source, visible, close, imageStyle, indicator, overlayStyle } = this.props;
 
     return (<Modal
-        animationType={'fade'}
-        transparent={true}
-	onRequestClose={close}
-        visible={visible}>
+      animationType={'fade'}
+      transparent={true}
+      onRequestClose={close}
+      visible={visible}>
       <View style={[styles.overlay, overlayStyle]}>
         <TouchableWithoutFeedback onPress={close}>
           <Image indicator={indicator || ProgressBar} indicatorProps={this.props.indicatorProps} resizeMode={'contain'} source={source} style={[styles.image, imageStyle]} />
@@ -35,27 +36,27 @@ export default class ImagePreview extends Component {
 }
 
 ImagePreview.propTypes = {
-  indicator: React.PropTypes.func,
-  visible: React.PropTypes.bool,
-  close: React.PropTypes.func,
-  source: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.object
+  indicator: PropTypes.func,
+  visible: PropTypes.bool,
+  close: PropTypes.func,
+  source: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object
   ]),
-  indicatorProps: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.object
+  indicatorProps: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object
   ]),
-  imageStyle: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.object
+  imageStyle: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object
   ]),
-  overlayStyle: React.PropTypes.oneOfType([
-    React.PropTypes.number,
-    React.PropTypes.object
+  overlayStyle: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object
   ]),
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.object,
-    React.PropTypes.array
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
   ])
 };
